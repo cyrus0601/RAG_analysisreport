@@ -1,0 +1,57 @@
+#================================================================================================
+
+
+# %%
+"""
+轉正特定頁面
+"""
+# import fitz
+# 
+# def save_pdf_with_rotated_page(pdf_file, pages_to_rotate, output_file):
+#     """
+#     Saves a PDF file with specific pages rotated.
+#     """
+#     pdf_document = fitz.open(pdf_file)
+#     new_pdf = fitz.open()
+
+#     # Iterate over all pages in the original PDF
+#     for page_num in range(pdf_document.page_count):
+#         page = pdf_document.load_page(page_num)
+
+#         if page_num in pages_to_rotate:  
+#             page.set_rotation(90)
+
+#         new_pdf.insert_pdf(pdf_document, from_page=page_num, to_page=page_num)
+
+#     new_pdf.save(output_file)
+#     pdf_document.close()
+#     new_pdf.close()
+
+# pdf_file = ""
+# pages_to_rotate = [88, 89]
+# output_file = ""  
+
+# save_pdf_with_rotated_page(pdf_file, pages_to_rotate, output_file)
+
+
+#================================================================================================
+
+
+# %%
+"""
+擷取頁面成圖像
+"""
+#import fitz
+#
+# def pdf_page_to_image(pdf_path, page_number, output_image_path):
+#     pdf_document = fitz.open(pdf_path)
+#     page = pdf_document.load_page(page_number)
+
+#     pix = page.get_pixmap()
+    
+#     pix.save(output_image_path)
+#     pdf_document.close()
+
+# output_image_path = ''
+
+# pdf_page_to_image("", , output_image_path)
