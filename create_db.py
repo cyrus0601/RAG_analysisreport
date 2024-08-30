@@ -11,9 +11,9 @@ from langchain.vectorstores import Chroma
 from langchain.docstore.document import Document
 from chromadb.config import Settings
 
-os.environ["AZURE_OPENAI_API_KEY"] = "9c7f22d8a74b4008be97161c1bd5a756"
-os.environ["AZURE_OPENAI_API_VERSION"] = "2024-02-15-preview"
-os.environ["AZURE_OPENAI_ENDPOINT"] = "https://idrc-openai-test.openai.azure.com/"
+os.environ["AZURE_OPENAI_API_KEY"] = ""
+os.environ["AZURE_OPENAI_API_VERSION"] = ""
+os.environ["AZURE_OPENAI_ENDPOINT"] = ""
 azure_openai_embeddings = AzureOpenAIEmbeddings(
         deployment='text-embedding-3-large',
         model="text-embedding-3-large",
@@ -66,13 +66,13 @@ def vector_db(extracted_content, azure_openai_embeddings, persist_directory):
     vector_store.persist()
 
 # %%
-input_pdf = "report/瑞昱年報.pdf"
-realtek_pages_to_extract = list(range(67+3, 89+3))  # "營運概況"到"從業員工"頁數
+input_pdf = ".pdf"
+realtek_pages_to_extract = list(range(67+3, 89+3))
 realtek_extracted_content = extract_content(input_pdf, realtek_pages_to_extract)
-vector_db(realtek_extracted_content, azure_openai_embeddings, "db/realtek_db")
+vector_db(realtek_extracted_content, azure_openai_embeddings, "db/")
 
-input_pdf = "report/達發年報.pdf"
+input_pdf = ".pdf"
 airhona_pages_to_extract = list(range(47+4, 57+4))  
 airhona_extracted_content = extract_content(input_pdf, airhona_pages_to_extract)
-vector_db(airhona_extracted_content, azure_openai_embeddings, "db/airoha_db")
+vector_db(airhona_extracted_content, azure_openai_embeddings, "db/")
 
