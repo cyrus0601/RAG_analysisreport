@@ -1,3 +1,6 @@
+"""
+Description: This script is used to convert image to base64 format to ask LLM
+"""
 # %%
 import os
 import base64
@@ -39,7 +42,7 @@ response = client.chat.completions.create(
                 "system": "你是一個繁體中文AI助理，可以完成使用者交派給你的任務。",
                 "role": "user",
                 "content": [
-                    {"type": "text", "text": "幫我把圖片的內容做成表格輸出給我，並告訴我營運概況在第幾頁"},
+                    {"type": "text", "text": ""},
                     {
                     "type": "image_url",
                     "image_url": {
